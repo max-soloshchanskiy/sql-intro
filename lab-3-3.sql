@@ -1,6 +1,13 @@
 -- What were the winningest teams in each season of the 
 -- modern era (from 1960-present), listed by winningest teams first?
 
+
+    SELECT year, name, MAX(wins)
+    from teams
+    WHERE year > 1959
+    Group by year
+    Order by MAX(wins) DESC;
+
 -- Expected result: 61 rows, starting with
 --
 -- +------+-------------------------------+-----------+
